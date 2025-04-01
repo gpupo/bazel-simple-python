@@ -2,3 +2,4 @@ bazel-bazel-simple
 bazel-bin
 bazel-out
 bazel-testlogs
+bazel-bazel-apache-airflow-dags
