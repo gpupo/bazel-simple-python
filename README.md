@@ -23,6 +23,9 @@ Este é um projeto de exemplo que demonstra o uso de [Bazel](https://bazel.build
 
     bazel run //:create_venv
 
+
+    bazel run //:sync_venv
+
 ## Compilando
 
 Para gerar o arquivo `requirements.txt` a partir do `pyproject.toml`, execute:
@@ -43,9 +46,15 @@ Para rodar os testes do projeto, utilize:
 bazel test //...
 ```
 
+## DAG Apache Airflow
+
+    bazel run //dag:dag_test
+
+TODO: Adicionar Docker
+
 ## Requisitos
 
-- Python >= 3.13
+- Python >= 3.12
 - Bazel (bzlmod)
 
 ## Destaques
