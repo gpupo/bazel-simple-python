@@ -1,10 +1,9 @@
 [project]
-name = "bazel-simple"
-version = "0.1.0"
-description = "Add your description here"
+name = "bazel-simple-python"
+version = "0.2.0"
+description = "Projeto de Exemplo: Monorepo com Python e Bazel"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
-    # An example unconstrained dependency; any version probably works
     "requests",
 ]
