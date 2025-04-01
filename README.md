@@ -47,3 +47,16 @@ bazel test //...
 
 - Python >= 3.13
 - Bazel (bzlmod)
+
+## Destaques
+
+Dependencias usando constraints
+
+```sh
+ uv add "pytest"\
+    "apache-airflow>=2.10.5"\
+    "apache-airflow-providers-postgres"\
+    "apache-airflow-providers-common-sql"\
+    "apache-airflow-providers-sqlite"\
+ --constraint deps/apache-airflow-2.10.5-constraints-python-3.12.txt
+```

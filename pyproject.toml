@@ -5,5 +5,10 @@ description = "Projeto de Exemplo: Monorepo com Python e Bazel"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "apache-airflow>=2.10.5",
+    "apache-airflow-providers-common-sql>=1.21.0",
+    "apache-airflow-providers-postgres>=6.0.0",
+    "apache-airflow-providers-sqlite>=4.0.0",
+    "pytest>=8.3.4",
     "requests",
 ]
