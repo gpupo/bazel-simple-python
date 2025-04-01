@@ -1,22 +1,33 @@
+load("@pypi//:requirements.bzl", "requirement")
 load("@rules_python//python:py_binary.bzl", "py_binary")
 load("@rules_python//python:py_library.bzl", "py_library")
 load("@rules_python//python:py_test.bzl", "py_test")
-load("@pip//:requirements.bzl", "requirement")
-
 load("@rules_uv//uv:pip.bzl", "pip_compile")
+load("@rules_uv//uv:venv.bzl", "create_venv", "sync_venv")
 
 package(default_visibility = ["//visibility:public"])
 
 py_binary(
-  name = "main",
-  srcs = ["main.py"],
-  deps = [
-    "//mylib:name",
-  ]
+    name = "main",
+    srcs = ["main.py"],
+    deps = [
+        "//mylib:name",
+    ],
 )
 
 pip_compile(
     name = "generate_requirements_txt",
     requirements_in = "pyproject.toml",
     requirements_txt = "requirements.txt",
+)
+
+create_venv(
+    name = "create_venv",
+    destination_folder = ".venv",
+    requirements_txt = "//:requirements.txt",  # default
+)
+
+sync_venv(
+    name = "sync_venv",
+    destination_folder = ".venv",
 )
