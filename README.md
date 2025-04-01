@@ -50,11 +50,11 @@ bazel test //...
 
 Rodando os testes unitarios
 
-    bazel run //dag:dag_test
+    bazel run //dag/simple_dag:dag_test
 
 Rodando a adaptacao para ambiente local
 
-    bazel run //dag:dag_dev
+    bazel run //dag/simple_dag:dag_dev
 
 TODO: Adicionar DockerOperator
 
