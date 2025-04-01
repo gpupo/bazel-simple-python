@@ -19,6 +19,10 @@ Este é um projeto de exemplo que demonstra o uso de [Bazel](https://bazel.build
 ├── requirements.txt    # Dependências do projeto
 ```
 
+## Preparo do ambiente
+
+    bazel run //:create_venv
+
 ## Compilando
 
 Para gerar o arquivo `requirements.txt` a partir do `pyproject.toml`, execute:
