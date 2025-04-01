@@ -1,6 +1,6 @@
 module(
     name = "bazel-simple-python",
-    version = "0.2",
+    version = "0.3",
     compatibility_level = 1,
 )
 
@@ -12,6 +12,7 @@ bazel_dep(name = "rules_uv", version = "0.63.0")
 # INFO: https://github.com/bazel-contrib/rules_oci/
 bazel_dep(name = "rules_oci", version = "2.2.5")
 
+# INFO: Python config
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
 python.toolchain(
     python_version = "3.12",
@@ -39,3 +40,14 @@ pip.parse(
     requirements_lock = "//:requirements.txt",
 )
 use_repo(pip, "pypi")
+
+# INFO: Docker Images
+oci = use_extension("@rules_oci//oci:extensions.bzl", "oci")
+oci.pull(
+    name = "python_3_12_9_image",
+    #digest = "sha256:...",  # INFO: https://hub.docker.com/_/python
+    image = "index.docker.io/library/python",
+    platforms = ["linux/amd64"],
+    tag = "3.12.9-slim",
+)
+use_repo(oci, "python_3_12_9_image")
