@@ -481,7 +481,7 @@
         "bzlTransitiveDigest": "Na3CSqXZ/0ryNiFlQYazko5xszx5rVFuJu6gjTA5duQ=",
         "usagesDigest": "lZB80AepWucblvwrn0cps30+cGAb+iflR0IAjxse8Ns=",
         "recordedFileInputs": {
-          "@@//requirements.txt": "6d469e1e1375096e0798704aeddaa57411b7327ddf0c0178ffa0d8fa47e88923",
+          "@@//requirements.txt": "0429b25cd547228baafa188db56085330a85042638be51fae089ee38fff40a1d",
           "@@protobuf+//python/requirements.txt": "983be60d3cec4b319dcab6d48aeb3f5b2f7c3350f26b3a9e97486c37967c73c5",
           "@@rules_fuzzing+//fuzzing/requirements.txt": "ab04664be026b632a0d2a2446c4f65982b7654f5b6851d2f9d399a19b7242a5b",
           "@@rules_python+//tools/publish/requirements_darwin.txt": "095d4a4f3d639dce831cd493367631cd51b53665292ab20194bac2c0c6458fa8",
