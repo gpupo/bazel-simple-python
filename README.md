@@ -48,9 +48,15 @@ bazel test //...
 
 ## DAG Apache Airflow
 
+Rodando os testes unitarios
+
     bazel run //dag:dag_test
 
-TODO: Adicionar Docker
+Rodando a adaptacao para ambiente local
+
+    bazel run //dag:dag_dev
+
+TODO: Adicionar DockerOperator
 
 ## Requisitos
 
