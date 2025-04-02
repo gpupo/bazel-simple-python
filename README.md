@@ -11,10 +11,8 @@ Este é um projeto de exemplo que demonstra o uso de [Bazel](https://bazel.build
 ├── bazel-out           # Cache e artefatos do Bazel
 ├── bazel-testlogs      # Logs de testes
 ├── mylib/              # Módulo Python de exemplo
-├── main.py             # Script principal
 ├── BUILD.bazel         # Configuração do Bazel
 ├── MODULE.bazel        # Definição do módulo Bazel
-├── MODULE.bazel.lock   # Arquivo de bloqueio do módulo
 ├── pyproject.toml      # Configuração do projeto Python
 ├── requirements.txt    # Dependências do projeto
 ```
@@ -50,15 +48,15 @@ bazel test //...
 
 Rodando os testes unitarios
 
-    bazel run //dag/simple_dag:dag_test
+    bazel run //dag/simple-dag:dag_test
 
 Rodando a adaptacao para ambiente local
 
-    bazel run //dag/simple_dag:dag_dev
+    bazel run //dag/simple-dag:dag_dev
 
 ## DockerOperator
 
-    bazel build //dag/docker-operator-dag:python3_image
+Veja a doc de ./dag/docker-operator-dag/
 
 ## Requisitos
 
