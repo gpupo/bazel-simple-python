@@ -16,7 +16,6 @@ The implementation:
 docker-operator-dag/
 ├── BUILD.bazel      # Bazel build rules
 ├── dag.py           # Airflow DAG definition
-├── Dockerfile       # Docker configuration (alternative to Bazel)
 ├── local_dev.py     # Local execution script
 ├── task.py          # Python task to run in container
 └── README.md        # This documentation
@@ -36,30 +35,7 @@ bazel build //dag/docker-operator-dag:image
 bazel run //dag/docker-operator-dag:image_load
 ```
 
-### 2. Running the DAG
-
-The DAG (`dag.py`) uses `DockerOperator` to execute the task in the container:
-
-```python
-from airflow import DAG
-from airflow.providers.docker.operators.docker import DockerOperator
-
-with DAG(
-    'docker_operator_example',
-    default_args=default_args,
-    schedule_interval=None
-) as dag:
-
-    run_task = DockerOperator(
-        task_id='run_in_docker',
-        image='docker-operator-dag:latest',  # Matches repo_tags in BUILD.bazel
-        api_version='auto',
-        auto_remove=True,
-        command='python /app/task.py'
-    )
-```
-
-### 3. Local Development
+### 2. Local Development
 
 Test the DAG locally without Airflow:
 
@@ -67,29 +43,6 @@ Test the DAG locally without Airflow:
 # Execute the DAG tasks locally
 bazel run //dag/docker-operator-dag:local_dev
 ```
-
-## Key Components
-
-### `task.py`
-
-The Python script that runs inside the container. Modify this for your specific task logic.
-
-### `BUILD.bazel`
-
-Defines the build pipeline:
-
-- Creates a Python binary from `task.py`
-- Packages it into a tarball
-- Builds an OCI container image
-- Provides a load rule for local Docker
-
-### `local_dev.py`
-
-Provides a local execution environment that:
-
-- Simulates Airflow's task execution
-- Runs each task sequentially
-- Provides basic logging
 
 ## Development Workflow
 
@@ -103,17 +56,6 @@ Provides a local execution environment that:
    bazel run //dag/docker-operator-dag:local_dev
    ```
 4. Deploy to Airflow
-
-## Customizing
-
-1. To add Python dependencies:
-
-   - Add to `requirements.txt` in project root
-   - Include in `deps` in `BUILD.bazel`
-
-2. To change the base image:
-   - Update the `base` parameter in `oci_image` rule
-   - Or modify the `Dockerfile` for custom builds
 
 ## Troubleshooting
 
