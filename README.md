@@ -46,17 +46,19 @@ Para rodar os testes do projeto, utilize:
 bazel test //...
 ```
 
-## DAG Apache Airflow
+## Simple DAG Apache Airflow
 
 Rodando os testes unitarios
 
-    bazel run //dag:dag_test
+    bazel run //dag/simple_dag:dag_test
 
 Rodando a adaptacao para ambiente local
 
-    bazel run //dag:dag_dev
+    bazel run //dag/simple_dag:dag_dev
 
-TODO: Adicionar DockerOperator
+## DockerOperator
+
+    bazel build //dag/docker-operator-dag:python3_image
 
 ## Requisitos
 

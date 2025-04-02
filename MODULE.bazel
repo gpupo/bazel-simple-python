@@ -1,14 +1,21 @@
 module(
     name = "bazel-simple-python",
-    version = "0.2",
+    version = "0.3",
     compatibility_level = 1,
 )
 
 bazel_dep(name = "rules_python", version = "1.3.0")
 
-# SEE: https://github.com/theoremlp/rules_uv/
+# INFO: https://github.com/theoremlp/rules_uv/
 bazel_dep(name = "rules_uv", version = "0.63.0")
 
+# INFO: https://github.com/bazel-contrib/rules_oci/
+bazel_dep(name = "rules_oci", version = "2.2.5")
+
+# INFO:https://github.com/bazelbuild/rules_pkg/
+bazel_dep(name = "rules_pkg", version = "1.1.0")
+
+# INFO: Python config
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
 python.toolchain(
     python_version = "3.12",
@@ -36,3 +43,15 @@ pip.parse(
     requirements_lock = "//:requirements.txt",
 )
 use_repo(pip, "pypi")
+
+# INFO: Docker Images
+oci = use_extension("@rules_oci//oci:extensions.bzl", "oci")
+
+# INFO: https://hub.docker.com/_/python
+oci.pull(
+    name = "python3",
+    digest = "sha256:a866731a6b71c4a194a845d86e06568725e430ed21821d0c52e4efb385cf6c6f",
+    image = "python:3.12.9-slim",
+    platforms = ["linux/amd64"],
+)
+use_repo(oci, "python3", "python3_linux_amd64")

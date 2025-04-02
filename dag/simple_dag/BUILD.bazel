@@ -1,0 +1,32 @@
+load("@pypi//:requirements.bzl", "requirement")
+load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
+
+py_library(
+    name = "dag",
+    srcs = ["minimal_dag.py"],
+    visibility = ["//visibility:public"],
+    deps = [
+        requirement("apache-airflow"),
+    ],
+)
+
+py_test(
+    name = "dag_test",
+    srcs = ["test_dag.py"],
+    main = "test_dag.py",
+    deps = [
+        ":dag",
+        requirement("pytest"),
+        requirement("apache-airflow"),
+    ],
+)
+
+py_binary(
+    name = "dag_dev",
+    srcs = ["local_dev.py"],
+    main = "local_dev.py",
+    deps = [
+        ":dag",
+        requirement("apache-airflow"),
+    ],
+)
