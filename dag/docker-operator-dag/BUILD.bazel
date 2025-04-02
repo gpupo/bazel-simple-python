@@ -14,8 +14,8 @@ py_binary(
 pkg_tar(
     name = "task_tar",
     srcs = [":task"],
-    include_runfiles = True,  # Python binaries
-    package_dir = "/app",  # Where files will be placed in container
+    include_runfiles = True,
+    package_dir = "/app",
 )
 
 # INFO: Cria a imagem
@@ -23,8 +23,8 @@ oci_image(
     name = "image",
     base = "@python3",
     cmd = ["python3"],
-    entrypoint = ["/app/task"],  # Path binary in container
-    tars = [":task_tar"],  # packaged application
+    entrypoint = ["/app/task"],
+    tars = [":task_tar"],
 )
 
 # INFO: Registra a imagem no ambiente

@@ -1,9 +1,4 @@
-import os
-import sys
 from datetime import datetime
-
-# Add Airflow to Python path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Import the DAG
 from dag import dag
@@ -13,7 +8,6 @@ def local_run():
     """
     Run the DAG locally for testing and development
     """
-    # Get the DAG object
     print("Running DAG locally...")
 
     # Run each task sequentially
