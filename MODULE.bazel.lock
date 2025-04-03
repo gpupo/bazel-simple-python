@@ -896,7 +896,7 @@
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "vanqorv5uSAUzWdiofsrm3KqS6w5aFojwH+nl9U1nUw=",
-        "usagesDigest": "pcBjRehAXosWF6+v3Psb2Cw+dWQah1f6cXzj1DogbjE=",
+        "usagesDigest": "K43szT+X6yYZaCQzr5Izobvh80Y+gkOcSHJmPdPjHOg=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -1085,7 +1085,7 @@
     "@@rules_python+//python/extensions:pip.bzl%pip": {
       "general": {
         "bzlTransitiveDigest": "Na3CSqXZ/0ryNiFlQYazko5xszx5rVFuJu6gjTA5duQ=",
-        "usagesDigest": "8C4xkdewwejlDg2Hc75ZGzeBesJsgAtTnl7Ent7boIg=",
+        "usagesDigest": "JUIAWh6F5KU3Fp1P8LuMpOJcVPcE20ZgBRgj6V3AiUI=",
         "recordedFileInputs": {
           "@@//requirements.txt": "611b6ddee7245290be0d49a7a7347c90b52af654da490030b04f7198b22fcbda",
           "@@protobuf+//python/requirements.txt": "983be60d3cec4b319dcab6d48aeb3f5b2f7c3350f26b3a9e97486c37967c73c5",
