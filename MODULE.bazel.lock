@@ -1087,7 +1087,7 @@
         "bzlTransitiveDigest": "Na3CSqXZ/0ryNiFlQYazko5xszx5rVFuJu6gjTA5duQ=",
         "usagesDigest": "8C4xkdewwejlDg2Hc75ZGzeBesJsgAtTnl7Ent7boIg=",
         "recordedFileInputs": {
-          "@@//requirements.txt": "93db0fe77ec706524749f1ff6f1c6d8dd314e90a6e1041d6d51520a0abab48c6",
+          "@@//requirements.txt": "611b6ddee7245290be0d49a7a7347c90b52af654da490030b04f7198b22fcbda",
           "@@protobuf+//python/requirements.txt": "983be60d3cec4b319dcab6d48aeb3f5b2f7c3350f26b3a9e97486c37967c73c5",
           "@@rules_fuzzing+//fuzzing/requirements.txt": "ab04664be026b632a0d2a2446c4f65982b7654f5b6851d2f9d399a19b7242a5b",
           "@@rules_python+//tools/publish/requirements_darwin.txt": "095d4a4f3d639dce831cd493367631cd51b53665292ab20194bac2c0c6458fa8",
@@ -1374,6 +1374,19 @@
               "python_interpreter_target": "@@rules_python++python+python_3_12_host//:python",
               "repo": "pypi_312",
               "requirement": "apache-airflow-providers-common-sql==1.24.1 --hash=sha256:43723f76816f1c3d3fdafdf449a8fa67e67eb93551aa5705c96e1123ae15bca1 --hash=sha256:ce36740997fea216c103204b01d1fcdac2e856d0f3e4ac6cc8b5e9da3e8881ba"
+            }
+          },
+          "pypi_312_apache_airflow_providers_docker": {
+            "repoRuleId": "@@rules_python+//python/private/pypi:whl_library.bzl%whl_library",
+            "attributes": {
+              "dep_template": "@pypi//{name}:{target}",
+              "extra_pip_args": [
+                "--index-url",
+                "https://pypi.org/simple"
+              ],
+              "python_interpreter_target": "@@rules_python++python+python_3_12_host//:python",
+              "repo": "pypi_312",
+              "requirement": "apache-airflow-providers-docker==4.3.0 --hash=sha256:992c47e2151f3de8ef2b7a2beb4e75fbab592fb07cfe5741748dd1869d5e4de8 --hash=sha256:e63f79ddfcee4e9af7e5dc2d08af12f6035c7420f706d045904578d1a69e58cf"
             }
           },
           "pypi_312_apache_airflow_providers_fab": {
@@ -1862,6 +1875,19 @@
               "python_interpreter_target": "@@rules_python++python+python_3_12_host//:python",
               "repo": "pypi_312",
               "requirement": "dnspython==2.7.0 --hash=sha256:b4c34b7d10b51bcc3a5071e7b8dee77939f1e878477eeecc965e9835f63c6c86 --hash=sha256:ce9c432eda0dc91cf618a5cedf1a4e142651196bbcd2c80e89ed5a907e5cfaf1"
+            }
+          },
+          "pypi_312_docker": {
+            "repoRuleId": "@@rules_python+//python/private/pypi:whl_library.bzl%whl_library",
+            "attributes": {
+              "dep_template": "@pypi//{name}:{target}",
+              "extra_pip_args": [
+                "--index-url",
+                "https://pypi.org/simple"
+              ],
+              "python_interpreter_target": "@@rules_python++python+python_3_12_host//:python",
+              "repo": "pypi_312",
+              "requirement": "docker==7.1.0 --hash=sha256:ad8c70e6e3f8926cb8a92619b832b4ea5299e2831c14284663184e200546fa6c --hash=sha256:c96b93b7f0a746f9e77d325bcfb87422a3d8bd4f03136ae8a85b37f1898d5fc0"
             }
           },
           "pypi_312_email_validator": {
@@ -2759,6 +2785,19 @@
               "python_interpreter_target": "@@rules_python++python+python_3_12_host//:python",
               "repo": "pypi_312",
               "requirement": "python-dateutil==2.9.0.post0 --hash=sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3 --hash=sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
+            }
+          },
+          "pypi_312_python_dotenv": {
+            "repoRuleId": "@@rules_python+//python/private/pypi:whl_library.bzl%whl_library",
+            "attributes": {
+              "dep_template": "@pypi//{name}:{target}",
+              "extra_pip_args": [
+                "--index-url",
+                "https://pypi.org/simple"
+              ],
+              "python_interpreter_target": "@@rules_python++python+python_3_12_host//:python",
+              "repo": "pypi_312",
+              "requirement": "python-dotenv==1.1.0 --hash=sha256:41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5 --hash=sha256:d7c01d9e2293916c18baf562d95698754b0dbbb5e74d457c45d4f6561fb9d55d"
             }
           },
           "pypi_312_python_nvd3": {
@@ -5540,6 +5579,7 @@
                 "apache_airflow_providers_common_compat": "{\"pypi_312_apache_airflow_providers_common_compat\":[{\"version\":\"3.12\"}]}",
                 "apache_airflow_providers_common_io": "{\"pypi_312_apache_airflow_providers_common_io\":[{\"version\":\"3.12\"}]}",
                 "apache_airflow_providers_common_sql": "{\"pypi_312_apache_airflow_providers_common_sql\":[{\"version\":\"3.12\"}]}",
+                "apache_airflow_providers_docker": "{\"pypi_312_apache_airflow_providers_docker\":[{\"version\":\"3.12\"}]}",
                 "apache_airflow_providers_fab": "{\"pypi_312_apache_airflow_providers_fab\":[{\"version\":\"3.12\"}]}",
                 "apache_airflow_providers_ftp": "{\"pypi_312_apache_airflow_providers_ftp\":[{\"version\":\"3.12\"}]}",
                 "apache_airflow_providers_http": "{\"pypi_312_apache_airflow_providers_http\":[{\"version\":\"3.12\"}]}",
@@ -5570,6 +5610,7 @@
                 "deprecated": "{\"pypi_312_deprecated\":[{\"version\":\"3.12\"}]}",
                 "dill": "{\"pypi_312_dill\":[{\"version\":\"3.12\"}]}",
                 "dnspython": "{\"pypi_312_dnspython\":[{\"version\":\"3.12\"}]}",
+                "docker": "{\"pypi_312_docker\":[{\"version\":\"3.12\"}]}",
                 "email_validator": "{\"pypi_312_email_validator\":[{\"version\":\"3.12\"}]}",
                 "flask": "{\"pypi_312_flask\":[{\"version\":\"3.12\"}]}",
                 "flask_appbuilder": "{\"pypi_312_flask_appbuilder\":[{\"version\":\"3.12\"}]}",
@@ -5639,6 +5680,7 @@
                 "pytest": "{\"pypi_312_pytest\":[{\"version\":\"3.12\"}]}",
                 "python_daemon": "{\"pypi_312_python_daemon\":[{\"version\":\"3.12\"}]}",
                 "python_dateutil": "{\"pypi_312_python_dateutil\":[{\"version\":\"3.12\"}]}",
+                "python_dotenv": "{\"pypi_312_python_dotenv\":[{\"version\":\"3.12\"}]}",
                 "python_nvd3": "{\"pypi_312_python_nvd3\":[{\"version\":\"3.12\"}]}",
                 "python_slugify": "{\"pypi_312_python_slugify\":[{\"version\":\"3.12\"}]}",
                 "pytz": "{\"pypi_312_pytz\":[{\"version\":\"3.12\"}]}",
@@ -5685,6 +5727,7 @@
                 "apache_airflow_providers_common_compat",
                 "apache_airflow_providers_common_io",
                 "apache_airflow_providers_common_sql",
+                "apache_airflow_providers_docker",
                 "apache_airflow_providers_fab",
                 "apache_airflow_providers_ftp",
                 "apache_airflow_providers_http",
@@ -5715,6 +5758,7 @@
                 "deprecated",
                 "dill",
                 "dnspython",
+                "docker",
                 "email_validator",
                 "flask",
                 "flask_appbuilder",
@@ -5784,6 +5828,7 @@
                 "pytest",
                 "python_daemon",
                 "python_dateutil",
+                "python_dotenv",
                 "python_nvd3",
                 "python_slugify",
                 "pytz",
