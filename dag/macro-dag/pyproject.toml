@@ -1,0 +1,12 @@
+[project]
+name = "macro-dag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12.9"
+dependencies = [
+    "mylib",
+]
+
+[tool.uv.sources]
+mylib = { workspace = true }
