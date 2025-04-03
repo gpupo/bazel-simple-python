@@ -1,0 +1,14 @@
+[project]
+name = "mylib"
+version = "0.1.0"
+description = "Custom lib"
+readme = "README.md"
+authors = [
+    { name = "gpupo", email = "g1mar@gpupo.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

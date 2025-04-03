@@ -113,6 +113,7 @@ apache-airflow==2.10.5 \
     #   apache-airflow-providers-common-compat
     #   apache-airflow-providers-common-io
     #   apache-airflow-providers-common-sql
+    #   apache-airflow-providers-docker
     #   apache-airflow-providers-fab
     #   apache-airflow-providers-ftp
     #   apache-airflow-providers-http
@@ -139,6 +140,10 @@ apache-airflow-providers-common-sql==1.24.1 \
     #   apache-airflow
     #   apache-airflow-providers-postgres
     #   apache-airflow-providers-sqlite
+apache-airflow-providers-docker==4.3.0 \
+    --hash=sha256:992c47e2151f3de8ef2b7a2beb4e75fbab592fb07cfe5741748dd1869d5e4de8 \
+    --hash=sha256:e63f79ddfcee4e9af7e5dc2d08af12f6035c7420f706d045904578d1a69e58cf
+    # via bazel-simple-python (pyproject.toml)
 apache-airflow-providers-fab==1.5.3 \
     --hash=sha256:0b1352e16266f40aa1037af316fd3abcc3852ca49b033acac9f9cad60e5f9764 \
     --hash=sha256:bb4d879fb9bf9bca7c0f103e1dc9d1fa25efe02e2c4536f4d60c789786fb1f89
@@ -516,6 +521,10 @@ dnspython==2.7.0 \
     --hash=sha256:b4c34b7d10b51bcc3a5071e7b8dee77939f1e878477eeecc965e9835f63c6c86 \
     --hash=sha256:ce9c432eda0dc91cf618a5cedf1a4e142651196bbcd2c80e89ed5a907e5cfaf1
     # via email-validator
+docker==7.1.0 \
+    --hash=sha256:ad8c70e6e3f8926cb8a92619b832b4ea5299e2831c14284663184e200546fa6c \
+    --hash=sha256:c96b93b7f0a746f9e77d325bcfb87422a3d8bd4f03136ae8a85b37f1898d5fc0
+    # via apache-airflow-providers-docker
 email-validator==2.2.0 \
     --hash=sha256:561977c2d73ce3611850a06fa56b414621e0c8faa9d66f2611407d87465da631 \
     --hash=sha256:cb690f344c617a714f22e66ae771445a1ceb46821152df8e165c5f9a364582b7
@@ -1588,6 +1597,10 @@ python-dateutil==2.9.0.post0 \
     #   flask-appbuilder
     #   pendulum
     #   time-machine
+python-dotenv==1.1.0 \
+    --hash=sha256:41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5 \
+    --hash=sha256:d7c01d9e2293916c18baf562d95698754b0dbbb5e74d457c45d4f6561fb9d55d
+    # via apache-airflow-providers-docker
 python-nvd3==0.16.0 \
     --hash=sha256:0115887289b3f751716ddd05c7b53ac5f05e71201e52496decdac453a50dcf7e
     # via apache-airflow
@@ -1675,6 +1688,7 @@ requests==2.32.3 \
     #   apache-airflow
     #   apache-airflow-providers-http
     #   connexion
+    #   docker
     #   opentelemetry-exporter-otlp-proto-http
     #   requests-toolbelt
 requests-toolbelt==1.0.0 \
@@ -2079,7 +2093,9 @@ universal-pathlib==0.2.6 \
 urllib3==2.3.0 \
     --hash=sha256:1cee9ad369867bfdbbb48b7dd50374c0967a0bb7710050facf0dd6911440e3df \
     --hash=sha256:f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d
-    # via requests
+    # via
+    #   docker
+    #   requests
 werkzeug==2.2.3 \
     --hash=sha256:2e1ccc9417d4da358b9de6f174e3ac094391ea1d4fbef2d667865d819dfd0afe \
     --hash=sha256:56433961bc1f12533306c624f3be5e744389ac61d722175d543e1751285da612

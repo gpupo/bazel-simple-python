@@ -1,0 +1,23 @@
+load("@pypi//:requirements.bzl", "requirement")
+load("@rules_python//python:py_library.bzl", "py_library")
+load("@rules_python//python:py_test.bzl", "py_test")
+
+py_library(
+    # BUG: empty task.runfiles/_main/mylib/__init__.py
+    name = "mylib_lib",
+    srcs = [
+        "__init__.py",
+    ],
+    imports = [
+        "..",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+# TODO: Reimplement test
+# py_test(
+#     name = "test",
+#     srcs = ["test.py"],
+#     deps = [":main"],
+# )
+#
