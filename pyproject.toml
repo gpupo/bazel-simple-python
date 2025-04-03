@@ -13,3 +13,6 @@ dependencies = [
     "pytest>=8.3.4",
     "requests",
 ]
+
+[tool.uv.workspace]
+members = ["mylib", "dag/macro-dag"]
