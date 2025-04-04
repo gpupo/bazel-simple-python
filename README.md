@@ -2,7 +2,7 @@
 
 Este é um projeto de exemplo que demonstra o uso de [Bazel](https://bazel.build) para gerenciar um monorepo com Python.
 
-> [!IMPORTANTE]
+> [!IMPORTANT]
 > Requer o uso de [uv](https://docs.astral.sh/uv/) para Python environment management.
 
 ## Estrutura do Projeto
@@ -25,8 +25,10 @@ Este é um projeto de exemplo que demonstra o uso de [Bazel](https://bazel.build
 ## Preparo do ambiente
 
 UV
-uv venv
-uv sync
+
+    uv venv
+
+    uv sync
 
 Bazel
 

@@ -1,0 +1,14 @@
+[project]
+name = "snakesay"
+version = "0.1.0"
+description = "Inspired by the classic cowsay program"
+readme = "README.md"
+authors = [
+    { name = "gpupo", email = "g1mar@gpupo.com" }
+]
+requires-python = ">=3.12.8"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
