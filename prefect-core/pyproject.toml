@@ -1,0 +1,9 @@
+[project]
+name = "prefect-core"
+version = "0.1.0"
+description = "UV workspace with Examples of how to use Prefect"
+readme = "README.md"
+requires-python = ">=3.12.9"
+dependencies = [
+    "prefect>=2.20.10",
+]
