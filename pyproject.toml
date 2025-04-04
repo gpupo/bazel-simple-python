@@ -1,18 +1,36 @@
 [project]
 name = "bazel-simple-python"
-version = "0.2.0"
+version = "0.3.0"
 description = "Projeto de Exemplo: Monorepo com Python e Bazel"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "requests",
+]
+
+[project.optional-dependencies]
+airflow = [
     "apache-airflow>=2.10.5",
     "apache-airflow-providers-common-sql>=1.21.0",
     "apache-airflow-providers-docker>=4.3.0",
     "apache-airflow-providers-postgres>=6.0.0",
     "apache-airflow-providers-sqlite>=4.0.0",
-    "pytest>=8.3.4",
-    "requests",
 ]
 
+[dependency-groups]
+dev = [
+  "pytest >=8.3.4"
+]
+lint = [
+    "ruff>=0.11.3",
+]
+
+[tool.uv]
+default-groups = ["dev", "lint"]
+
 [tool.uv.workspace]
-members = ["mylib", "dag/macro-dag"]
+members = ["packages/*", "apache-airflow/dag/*", "api"]
+exclude = []
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

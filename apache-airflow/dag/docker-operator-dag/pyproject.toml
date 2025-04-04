@@ -1,0 +1,5 @@
+[project]
+name = "docker-operator"
+version = "0.1.0"
+description = "UV workspace simples"
+requires-python = ">=3.12"

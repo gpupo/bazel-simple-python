@@ -8,6 +8,6 @@ py_binary(
     ],
     main = "task.py",
     deps = [
-        "//mylib/src/mylib:mylib_lib",
+        "//packages/mylib/src/mylib:mylib_lib",
     ],
 )
