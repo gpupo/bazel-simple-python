@@ -69,11 +69,6 @@ Rodando a adaptacao para ambiente local
 
 Veja a doc de `apache-airflow/dag/docker-operator-dag/`
 
-## Requisitos
-
-- Python >= 3.12
-- Bazel (bzlmod)
-
 ## Destaques
 
 Dependencias usando constraints
@@ -84,5 +79,6 @@ Dependencias usando constraints
     "apache-airflow-providers-postgres"\
     "apache-airflow-providers-common-sql"\
     "apache-airflow-providers-sqlite"\
- --constraint deps/apache-airflow-2.10.5-constraints-python-3.12.txt
+ --constraint .deps/apache-airflow-2.10.5-constraints-python-3.12.txt
+
 ```
