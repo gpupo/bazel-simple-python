@@ -6,4 +6,8 @@ readme = "README.md"
 requires-python = ">=3.12.9"
 dependencies = [
     "prefect>=2.20.10",
+    "snakesay",
 ]
+
+[tool.uv.sources]
+snakesay = { workspace = true }

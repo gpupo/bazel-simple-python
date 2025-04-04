@@ -2074,10 +2074,14 @@ version = "0.1.0"
 source = { virtual = "prefect-core" }
 dependencies = [
     { name = "prefect" },
+    { name = "snakesay" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "prefect", specifier = ">=2.20.10" }]
+requires-dist = [
+    { name = "prefect", specifier = ">=2.20.10" },
+    { name = "snakesay", editable = "packages/snakesay" },
+]
 
 [[package]]
 name = "prison"
